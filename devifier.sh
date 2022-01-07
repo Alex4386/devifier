@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # version of this script
-VERSION="0.2.1"
+VERSION="0.2.2"
 WORKING_DIR=$(pwd)
 
 # since HamoniKR does give a f--- on .profile, use .bashrc instead
@@ -91,10 +91,9 @@ curl -L "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lan
 
 cd $HOME/.firefox
 tar xvf $HOME/.firefox/firefox.tar.bz2 > /dev/null
-mv firefox/* ./ > /dev/null
-cp ./firefox/firefox ./firefox-scr
-rm -rf firefox
-mv ./firefox-scr ./firefox
+mv firefox firefox-tar
+mv firefox-tar/* ./ > /dev/null
+rm -rf firefox-tar
 cd "$WORKING_DIR"
 
 echo "export PATH=\"\$HOME/.firefox:\$PATH\"" >> $TARGET
