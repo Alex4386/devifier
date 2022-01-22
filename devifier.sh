@@ -20,6 +20,8 @@ echo -e "${BOLD}Ssajibang Dev-ifier${RESET} - ${ITALIC}ver. $VERSION${RESET}"
 # check if there is existing install
 source $TARGET
 
+echo
+
 if [ "$SSAJIBANG_DEVIFIED" = "1" ]; then
   # Already installed
   echo "This system was already devified. try running 'source ~/.bashrc' to apply development environment"
@@ -27,10 +29,9 @@ if [ "$SSAJIBANG_DEVIFIED" = "1" ]; then
   exit 1
 fi
 
+
 ### INSTALL_VARIABLES
 if [ ! -n "$DEVIFIER_INSTALL_N" ]; then
-  echo
-  echo
   echo "Devifier has detected that there is no predefined DEVIFIER_INSTALL_N"
   while true; do
     read -p "Do you wish to install n? (node version manager)" yn
@@ -43,8 +44,6 @@ if [ ! -n "$DEVIFIER_INSTALL_N" ]; then
 fi
 
 if [ ! -n "$DEVIFIER_INSTALL_GO_SDK" ]; then
-  echo
-  echo
   echo "Devifier has detected that there is no predefined DEVIFIER_INSTALL_GO_SDK"
   while true; do
     read -p "Do you wish to install latest Go SDK?" yn
@@ -57,8 +56,6 @@ if [ ! -n "$DEVIFIER_INSTALL_GO_SDK" ]; then
 fi
 
 if [ ! -n "$DEVIFIER_INSTALL_FIREFOX_DEV" ]; then
-  echo
-  echo
   echo "Devifier has detected that there is no predefined DEVIFIER_INSTALL_FIREFOX_DEV"
   while true; do
     read -p "Do you wish to install latest version of Firefox Developer Edition?" yn
@@ -71,8 +68,6 @@ if [ ! -n "$DEVIFIER_INSTALL_FIREFOX_DEV" ]; then
 fi
 
 if [ ! -n "$DEVIFIER_INSTALL_VSCODE" ]; then
-  echo
-  echo
   echo "Devifier has detected that there is no predefined DEVIFIER_INSTALL_VSCODE"
   while true; do
     read -p "Do you wish to install latest Visual Studio Code?" yn
@@ -84,6 +79,7 @@ if [ ! -n "$DEVIFIER_INSTALL_VSCODE" ]; then
   done
 fi
 
+echo
 
 echo "[RUN ] Configuring git environment"
 
@@ -162,20 +158,20 @@ if [ "$DEVIFIER_INSTALL_FIREFOX_DEV" -eq "1" ]; then
   echo "export PATH=\"\$HOME/.firefox:\$PATH\"" >> $TARGET
 
   cat << EOM > $HOME/Desktop/Firefox.desktop
-  #!/usr/bin/env xdg-open
-  [Desktop Entry]
-  Version=1.0
-  Name=Mozilla Firefox Developer Edition
-  GenericName=Web Browser
-  Exec=$HOME/.firefox/firefox-bin
-  Terminal=false
-  X-MultipleArgs=false
-  Type=Application
-  Icon=firefox
-  Categories=Network;WebBrowser;
-  MimeType=text/html;text/xml;application/xhtml_xml;x-scheme-handler/http;x-scheme-handler/https;
-  StartupNotify=true
-  EOM
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Name=Mozilla Firefox Developer Edition
+GenericName=Web Browser
+Exec=$HOME/.firefox/firefox-bin
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=firefox
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml_xml;x-scheme-handler/http;x-scheme-handler/https;
+StartupNotify=true
+EOM
 
   chmod +x $HOME/Desktop/Firefox.desktop
 
@@ -201,22 +197,22 @@ if [ "$DEVIFIER_INSTALL_VSCODE" -eq "1" ]; then
   echo "alias code=\"code --no-sandbox\"" >> $TARGET
 
   cat << EOM > $HOME/Desktop/VSCode.desktop
-  #!/usr/bin/env xdg-open
-  [Desktop Entry]
-  Version=1.0
-  Name=Visual Studio Code
-  Comment=Code Editing. Redefined.
-  GenericName=Text Editor
-  Exec=$HOME/.code/code --no-sandbox --unity-launch %F
-  Icon=com.visualstudio.code
-  Type=Application
-  StartupNotify=false
-  StartupWMClass=Code
-  Categories=Utility;TextEditor;Development;IDE;
-  MimeType=text/plain;inode/directory;
-  Actions=new-empty-window;
-  Keywords=vscode;
-  EOM
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Name=Visual Studio Code
+Comment=Code Editing. Redefined.
+GenericName=Text Editor
+Exec=$HOME/.code/code --no-sandbox --unity-launch %F
+Icon=com.visualstudio.code
+Type=Application
+StartupNotify=false
+StartupWMClass=Code
+Categories=Utility;TextEditor;Development;IDE;
+MimeType=text/plain;inode/directory;
+Actions=new-empty-window;
+Keywords=vscode;
+EOM
 
   chmod +x $HOME/Desktop/VSCode.desktop
 
