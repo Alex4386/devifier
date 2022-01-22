@@ -9,7 +9,7 @@
 3. `curl -L https://s4a.it/devifier | bash` 실행
 
 ## □ 탑재된 개방형 SW
-* Mozilla Firefox
+* Mozilla Firefox Developer Edition
 * Visual Studio Code
 * Go Programming Language
 * N: Node version manager
