@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # version of this script
-VERSION="0.3.0"
+VERSION="0.3.1"
 WORKING_DIR=$(pwd)
 
 # since HamoniKR does give a f--- on .profile, use .bashrc instead
