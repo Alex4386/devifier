@@ -34,7 +34,7 @@ fi
 if [ ! -n "$DEVIFIER_INSTALL_N" ]; then
   echo "Devifier has detected that there is no predefined DEVIFIER_INSTALL_N"
   while true; do
-    read -p "Do you wish to install n? (node version manager)" yn
+    read -p "Do you wish to install n (node version manager)? (y/n):" yn
     case $yn in
         [Yy]* ) DEVIFIER_INSTALL_N=1; break;;
         [Nn]* ) DEVIFIER_INSTALL_N=0; break;;
@@ -46,7 +46,7 @@ fi
 if [ ! -n "$DEVIFIER_INSTALL_GO_SDK" ]; then
   echo "Devifier has detected that there is no predefined DEVIFIER_INSTALL_GO_SDK"
   while true; do
-    read -p "Do you wish to install latest Go SDK?" yn
+    read -p "Do you wish to install latest Go SDK? (y/n):" yn
     case $yn in
         [Yy]* ) DEVIFIER_INSTALL_GO_SDK=1; break;;
         [Nn]* ) DEVIFIER_INSTALL_GO_SDK=0; break;;
@@ -58,7 +58,7 @@ fi
 if [ ! -n "$DEVIFIER_INSTALL_FIREFOX_DEV" ]; then
   echo "Devifier has detected that there is no predefined DEVIFIER_INSTALL_FIREFOX_DEV"
   while true; do
-    read -p "Do you wish to install latest version of Firefox Developer Edition?" yn
+    read -p "Do you wish to install latest version of Firefox Developer Edition? (y/n):" yn
     case $yn in
         [Yy]* ) DEVIFIER_INSTALL_FIREFOX_DEV=1; break;;
         [Nn]* ) DEVIFIER_INSTALL_FIREFOX_DEV=0; break;;
@@ -70,7 +70,7 @@ fi
 if [ ! -n "$DEVIFIER_INSTALL_VSCODE" ]; then
   echo "Devifier has detected that there is no predefined DEVIFIER_INSTALL_VSCODE"
   while true; do
-    read -p "Do you wish to install latest Visual Studio Code?" yn
+    read -p "Do you wish to install latest Visual Studio Code? (y/n):" yn
     case $yn in
         [Yy]* ) DEVIFIER_INSTALL_VSCODE=1; break;;
         [Nn]* ) DEVIFIER_INSTALL_VSCODE=0; break;;
